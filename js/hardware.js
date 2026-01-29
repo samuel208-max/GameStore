@@ -6,6 +6,9 @@ if (listaDeHardware) {
 
         const articleHardware = document.createElement('article');
         articleHardware.className = "cardJogo";
+        articleHardware.addEventListener('click', () => {
+            window.location.href = `produto.php?id=${produto.id}`;
+        });
 
         const divHardware = document.createElement('div');
 
@@ -78,11 +81,14 @@ if (listaDeHardware) {
     function atualizarLista(produtosFiltrados) {
         listaDeHardware.innerHTML = ''; // limpa a lista
 
-        produtosFiltrados.forEach(produto => {
+        produtosFiltrados.forEach((produto) => {
             const liHardware = document.createElement('li');
 
             const articleHardware = document.createElement('article');
             articleHardware.className = "cardJogo";
+            articleHardware.addEventListener('click', () => {
+                window.location.href = `produto.php?id=${produto.id}`;
+            });
 
             const divHardware = document.createElement('div');
 

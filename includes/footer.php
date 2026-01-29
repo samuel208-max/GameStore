@@ -58,6 +58,7 @@
     <script src="../js/main.js" defer></script>
     <script src="../js/catalogo.js" defer></script>
     <script src="../js/hardware.js" defer></script>
+    <script src="../js/produto.js" defer></script>
 </body>
 
 </html>
