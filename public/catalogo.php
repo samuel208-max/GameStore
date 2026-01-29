@@ -70,7 +70,7 @@
                 </div>
             </aside>
 
-            <ul class="listaDeJogos" id="listaDeJogos"></ul>
+            <ul class="listaDeProdutos" id="listaDeJogos"></ul>
         </div>
     </section>
 </main>

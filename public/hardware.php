@@ -80,7 +80,9 @@ include '../includes/header.php'
             </aside>
 
             <!-- LISTA DE HARDWARE (JS) -->
-            <ul class="listaDeHardware" id="listaDeHardware"></ul>
+            <ul class="listaDeProdutos" id="listaDeHardware"></ul>
         </div>
     </section>
 </main>
+
+<?php include '../includes/footer.php'; ?>

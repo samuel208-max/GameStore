@@ -527,7 +527,7 @@ main #sectionInscricaoNewsletter .divInscricaoNewsletter .botaoInscricaoNewslett
     font-weight: bold;
 }
 
-.listaDeJogos {
+.listaDeProdutos {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
