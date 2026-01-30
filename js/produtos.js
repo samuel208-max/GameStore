@@ -146,7 +146,8 @@ let Hardware = [
         nome: "PlayStation 5",
         preco: 3999.90,
         tipos: ["Console"],
-        plataformas: ["PlayStation"]
+        plataformas: ["PlayStation"],
+        descricao: "O PlayStation 5 representa a nova geração de consoles da Sony, oferecendo gráficos em até 4K com suporte a ray tracing, carregamentos ultrarrápidos graças ao SSD de alta velocidade e uma experiência imersiva com o controle DualSense. Ideal para jogadores que buscam desempenho, realismo e uma vasta biblioteca de jogos exclusivos."
     },
     {
         id: 2,
@@ -155,7 +156,8 @@ let Hardware = [
         nome: "Xbox Series X",
         preco: 3799.90,
         tipos: ["Console"],
-        plataformas: ["Xbox"]
+        plataformas: ["Xbox"],
+        descricao: "O Xbox Series X é o console mais potente da Microsoft, projetado para rodar jogos em 4K nativo a até 120 FPS. Equipado com SSD NVMe de 1TB, 16GB de RAM GDDR6 e arquitetura AMD RDNA 2, oferece carregamentos rápidos, função Quick Resume e ampla retrocompatibilidade com gerações anteriores."
     },
     {
         id: 3,
@@ -164,7 +166,8 @@ let Hardware = [
         nome: "PC Gamer Ryzen 7",
         preco: 6499.90,
         tipos: ["PC Completo"],
-        plataformas: ["PC"]
+        plataformas: ["PC"],
+        descricao: "PC Gamer completo equipado com processador Ryzen 7, ideal para rodar jogos atuais em alta qualidade, além de excelente desempenho em multitarefa, edição de vídeo e aplicações pesadas. Uma máquina versátil para quem busca potência e estabilidade."
     },
     {
         id: 4,
@@ -173,7 +176,8 @@ let Hardware = [
         nome: "Controle DualSense",
         preco: 449.90,
         tipos: ["Controles"],
-        plataformas: ["PlayStation"]
+        plataformas: ["PlayStation"],
+        descricao: "O controle DualSense do PlayStation 5 traz uma nova experiência de jogabilidade com resposta tátil avançada e gatilhos adaptáveis. Seu design ergonômico e tecnologia de vibração inteligente aumentam a imersão em cada jogo."
     },
     {
         id: 5,
@@ -182,7 +186,8 @@ let Hardware = [
         nome: "Teclado Mecânico RGB",
         preco: 299.90,
         tipos: ["Perifericos"],
-        plataformas: ["PC"]
+        plataformas: ["PC"],
+        descricao: "Teclado mecânico gamer com iluminação RGB personalizável, switches de alta durabilidade e resposta rápida. Ideal para jogadores competitivos e usuários que valorizam conforto, precisão e visual moderno."
     },
     {
         id: 6,
@@ -191,7 +196,8 @@ let Hardware = [
         nome: "RTX 4070",
         preco: 4599.90,
         tipos: ["Componentes"],
-        plataformas: ["PC"]
+        plataformas: ["PC"],
+        descricao: "A placa de vídeo NVIDIA RTX 4070 oferece alto desempenho gráfico com suporte a ray tracing e tecnologia DLSS. Ideal para jogos em alta resolução, criação de conteúdo e experiências visuais de última geração."
     },
     {
         id: 7,
@@ -200,7 +206,8 @@ let Hardware = [
         nome: "Xbox Series S",
         preco: 2499.90,
         tipos: ["Console"],
-        plataformas: ["Xbox"]
+        plataformas: ["Xbox"],
+        descricao: "O Xbox Series S é um console compacto e totalmente digital, focado em desempenho e custo-benefício. Conta com SSD rápido, suporte a até 120 FPS e acesso ao vasto catálogo do Xbox Game Pass."
     },
     {
         id: 8,
@@ -209,7 +216,8 @@ let Hardware = [
         nome: "PlayStation 4",
         preco: 2299.90,
         tipos: ["Console"],
-        plataformas: ["PlayStation"]
+        plataformas: ["PlayStation"],
+        descricao: "O PlayStation 4 é um console consagrado, com uma enorme biblioteca de jogos e desempenho sólido. Ideal para quem deseja entrar no ecossistema PlayStation com ótimo custo-benefício."
     },
     {
         id: 9,
@@ -218,7 +226,8 @@ let Hardware = [
         nome: "Notebook Gamer i7 RTX 3060",
         preco: 7999.90,
         tipos: ["PC Completo"],
-        plataformas: ["PC"]
+        plataformas: ["PC"],
+        descricao: "Notebook gamer equipado com processador Intel i7 e placa de vídeo dedicada, ideal para rodar jogos modernos, trabalhar com softwares pesados e manter alta performance em mobilidade."
     },
     {
         id: 10,
@@ -227,7 +236,8 @@ let Hardware = [
         nome: "Monitor Gamer AOC 27'' 144Hz",
         preco: 1399.90,
         tipos: ["Perifericos"],
-        plataformas: ["PC"]
+        plataformas: ["PC"],
+        descricao: "Monitor gamer de 27 polegadas com taxa de atualização de 144Hz, proporcionando imagens mais fluidas e vantagem competitiva em jogos de ação e FPS."
     },
     {
         id: 11,
@@ -236,7 +246,8 @@ let Hardware = [
         nome: "Mouse Gamer RGB",
         preco: 199.90,
         tipos: ["Perifericos"],
-        plataformas: ["PC"]
+        plataformas: ["PC"],
+        descricao: "Mouse gamer com sensor de alta precisão, iluminação RGB e design ergonômico. Ideal para jogadores que buscam controle, velocidade e conforto."
     },
     {
         id: 12,
@@ -245,7 +256,8 @@ let Hardware = [
         nome: "Headset Gamer Surround",
         preco: 349.90,
         tipos: ["Perifericos"],
-        plataformas: ["PC"]
+        plataformas: ["PC"],
+        descricao: "Headset gamer com áudio surround, proporcionando maior imersão sonora. Conta com microfone de qualidade e conforto para longas sessões de jogo."
     },
     {
         id: 13,
@@ -254,7 +266,8 @@ let Hardware = [
         nome: "Controle Xbox Series",
         preco: 429.90,
         tipos: ["Controles"],
-        plataformas: ["Xbox"]
+        plataformas: ["Xbox"],
+        descricao: "Controle oficial do Xbox Series com ergonomia aprimorada, resposta precisa dos botões e compatibilidade com consoles Xbox e PC."
     },
     {
         id: 14,
@@ -263,7 +276,8 @@ let Hardware = [
         nome: "SSD NVMe 1TB Kingston",
         preco: 1199.90,
         tipos: ["Componentes"],
-        plataformas: ["PC"]
+        plataformas: ["PC"],
+        descricao: "SSD NVMe de 1TB com altíssima velocidade de leitura e gravação, ideal para reduzir drasticamente tempos de carregamento e melhorar o desempenho geral do sistema."
     },
     {
         id: 15,
@@ -272,7 +286,8 @@ let Hardware = [
         nome: "Memória RAM 16GB DDR4",
         preco: 1259.90,
         tipos: ["Componentes"],
-        plataformas: ["PC"]
+        plataformas: ["PC"],
+        descricao: "Memória RAM DDR4 de 16GB, ideal para jogos modernos, multitarefa avançada e maior estabilidade do sistema."
     },
     {
         id: 16,
@@ -281,7 +296,8 @@ let Hardware = [
         nome: "Ryzen 5 5600X",
         preco: 1999.99,
         tipos: ["Componentes"],
-        plataformas: ["PC"]
+        plataformas: ["PC"],
+        descricao: "Processador AMD Ryzen 5 5600X com alto desempenho para jogos e aplicações exigentes, oferecendo excelente equilíbrio entre potência e eficiência."
     },
     {
         id: 17,
@@ -290,6 +306,7 @@ let Hardware = [
         nome: "Fonte 750W 80 Plus Gold",
         preco: 549.90,
         tipos: ["Componentes"],
-        plataformas: ["PC"]
+        plataformas: ["PC"],
+        descricao: "Fonte de alimentação de 750W com certificação 80 Plus Gold, garantindo eficiência energética, estabilidade e segurança para seu setup."
     }
 ];

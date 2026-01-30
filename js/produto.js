@@ -13,10 +13,11 @@ function carregarProduto() {
     }
 
     container.innerHTML = `
-        <section class="">
+        <section class="informacoesProduto">
             <img src="${produto.foto}" alt="${produto.altFoto}">
             <div class="info">
                 <h1>${produto.nome}</h1>
+                <p>${produto.descricao}</p>
                 <p class="preco"><strong>Preço:</strong> R$ ${produto.preco.toFixed(2)}</p>
                 <p><strong>Tipo:</strong> ${produto.tipos.join(', ')}</p>
                 <p><strong>Plataforma:</strong> ${produto.plataformas.join(', ')}</p>
