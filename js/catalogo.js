@@ -4,9 +4,13 @@ if (listaDeJogos) {
     // MOSTRAR JOGOS ===================================
     Jogos.forEach((jogo) => {
         const li = document.createElement('li');
+        li.addEventListener('click', () => {
+            window.location.href = `produto.php?tipo=jogo&id=${jogo.id}`;
+        });
 
         const article = document.createElement('article');
         article.className = "cardJogo";
+
 
         const div = document.createElement('div');
 

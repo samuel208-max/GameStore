@@ -560,6 +560,7 @@ main #sectionInscricaoNewsletter .divInscricaoNewsletter .botaoInscricaoNewslett
     max-width: 100%;
     border-radius: 12px;
     background-color: #111;
+    animation: flutuar 4s ease-in infinite;
 }
 
 /* BLOCO DE TEXTO */
