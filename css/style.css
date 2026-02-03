@@ -23,7 +23,7 @@ header {
     /* começa na esquerda */
     width: 100%;
     /* ocupa toda a largura da tela */
-    z-index: 1000;
+    z-index: 999;
 }
 
 header span {
@@ -122,10 +122,43 @@ header .divBarraDePesquisa button {
 .iconesHeader li button:hover {
     transform: scale(1.08);
     box-shadow: 5px 0px 30px rgb(107, 5, 196);
+    border: 1px solid rgb(157, 51, 255);
 }
 
 .iconesHeader button i {
     color: rgb(9, 10, 10);
+}
+
+.carrinho {
+    background: linear-gradient(#513d64,#3c1e46);
+    box-shadow: 0 0 15px #7918d4;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px;
+    text-align: center;
+    height: 90%;
+    /* width: 10%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    color: #00cc6e;
+}
+
+.topoCarrinho {
+    display: flex;
+    gap: 30px;
+}
+
+.fecharCarrinho {
+    border: none;
+    background-color: transparent;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    font-size: 20px;
 }
 
 main #banner {
