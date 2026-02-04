@@ -130,25 +130,28 @@ header .divBarraDePesquisa button {
 }
 
 .carrinho {
-    background: linear-gradient(#513d64,#3c1e46);
-    box-shadow: 0 0 15px #7918d4;
-    position: absolute;
+    background: linear-gradient(#4a0f7d,#321848, #094f2e 85%, #00cc6e);
+    box-shadow: 10px 10px 15px #0e3f29;
+    position: fixed;
     top: 20px;
     right: 20px;
     z-index: 1000;
-    padding: 10px;
+    padding: 0 20px;
     text-align: center;
     height: 90%;
-    /* width: 10%; */
-    display: flex;
+    display: none;
     flex-direction: column;
-    justify-content: space-between;
     border-radius: 10px;
-    color: #00cc6e;
+}
+
+.carrinho.ativo {
+    display: flex;
 }
 
 .topoCarrinho {
     display: flex;
+    color: #00cc6e;
+    align-items: center;
     gap: 30px;
 }
 
@@ -160,6 +163,37 @@ header .divBarraDePesquisa button {
     cursor: pointer;
     font-size: 20px;
 }
+
+.resumoFinalCarrinho {
+    margin-top: auto;
+    padding: 10px 0;
+    border-top: 2px solid #4a0f7d;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.resumoFinalCarrinho p span {
+    color: #56099a;
+    font-size: 20px;
+}
+
+.resumoFinalCarrinho button {
+    margin-top: 5px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    background-color: #56099a;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.resumoFinalCarrinho button:hover {
+    background-color: #7a1ed1;
+}
+
 
 main #banner {
     position: relative;
