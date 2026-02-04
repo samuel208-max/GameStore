@@ -6,7 +6,7 @@ function carregarProduto() {
 
     const container = document.getElementById('produtoContainer');
 
-    if (!tipo || !id) {
+    if (!tipo || isNaN(id)) {
         container.innerHTML = '<p>Produto inválido.</p>';
         return;
     }
@@ -38,18 +38,26 @@ function carregarProduto() {
                     <strong>Preço:</strong> R$ ${produto.preco.toFixed(2)}
                 </p>
 
-                ${
-                    tipo === 'hardware'
-                        ? `<p><strong>Tipo:</strong> ${produto.tipos.join(', ')}</p>
+                ${tipo === 'hardware'
+            ? `<p><strong>Tipo:</strong> ${produto.tipos.join(', ')}</p>
                            <p><strong>Plataforma:</strong> ${produto.plataformas.join(', ')}</p>`
-                        : `<p><strong>Categorias:</strong> ${produto.categorias.join(', ')}</p>
+            : `<p><strong>Categorias:</strong> ${produto.categorias.join(', ')}</p>
                            <p><strong>Plataformas:</strong> ${produto.Plataformas.join(', ')}</p>`
-                }
+        }
 
                 <button id="btnCarrinho">Adicionar ao Carrinho</button>
             </div>
         </section>
     `;
+    const comprar = document.getElementById('btnCarrinho');
+
+    comprar.addEventListener('click', () => {
+        itensNoCarrinho.push({ ...produto });
+        localStorage.setItem('itensCarrinho', JSON.stringify(itensNoCarrinho))
+
+        console.log(itensNoCarrinho);
+        atualizarCarrinho();
+    });
 }
 
 carregarProduto();

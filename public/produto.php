@@ -1,4 +1,9 @@
-<?php include '../includes/header.php' ?>
+<?php 
+
+include '../includes/header.php';
+include '../includes/carrinho.php';
+
+?>
 
 <main>
     <div id="produtoContainer" class="section2"></div>
