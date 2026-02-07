@@ -3,6 +3,7 @@ const carrinho = document.getElementById('carrinho');
 const listaCarrinho = document.getElementById('listaCarrinho');
 const fecharCarrinho = document.getElementById('fecharCarrinho');
 const abrirCarrinho = document.getElementById('botaoCarrinho')
+const carrinhoHeader = document.getElementById('carrinhoHeader');
 const totalCarrinho = document.getElementById('totalCarrinho');
 
 // Abrir e fechar carrinho
@@ -29,6 +30,7 @@ function atualizarCarrinho() {
         vazio.className = 'carrinhoVazio'
         vazio.textContent = 'Carrinho vazio';
         listaCarrinho.appendChild(vazio);
+        calculaQuantidadeCarrinho();
         return;
     }
 
@@ -67,7 +69,6 @@ function atualizarCarrinho() {
             } else {
                 itensNoCarrinho = itensNoCarrinho.filter(item => item.id !== produto.id || item.tipo !== produto.tipo || item.nome !== produto.nome);
                 chamarToasts(`${produto.nome} removido do carrinho!`);
-                localStorage.setItem('itensCarrinho', JSON.stringify(itensNoCarrinho));
             }
             localStorage.setItem('itensCarrinho', JSON.stringify(itensNoCarrinho));
             atualizarCarrinho();
@@ -96,6 +97,9 @@ function atualizarCarrinho() {
 
     const total = itensNoCarrinho.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
     totalCarrinho.textContent = total.toFixed(2);
+
+    calculaQuantidadeCarrinho();
+    atualizarCarrinho();
 }
 
 atualizarCarrinho();
@@ -116,3 +120,29 @@ function chamarToasts(message) {
         toast.remove();
     }, 3000);
 }
+
+function calculaQuantidadeCarrinho() {
+    const totalItensCarrinho = itensNoCarrinho.reduce(
+        (acc, item) => acc + item.quantidade, 0);
+
+    if (!carrinhoHeader) return;
+
+    const iconeExistente = carrinhoHeader.querySelector('.iconeCarrinho');
+
+    if (totalItensCarrinho > 0) {
+        if (iconeExistente) {
+            iconeExistente.textContent = totalItensCarrinho;
+        } else {
+            const badge = document.createElement('span');
+            badge.className = 'iconeCarrinho';
+            badge.textContent = totalItensCarrinho;
+            carrinhoHeader.appendChild(badge);
+        }
+    } else {
+        if (iconeExistente) {
+            iconeExistente.remove();
+        }
+    }
+}
+
+calculaQuantidadeCarrinho();

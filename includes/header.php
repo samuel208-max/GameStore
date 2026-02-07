@@ -31,6 +31,6 @@
 
         <ul class="iconesHeader">
             <li><button type="button"><i class="fa-solid fa-user" id="botaoLogin"></i> Login</button></li>
-            <li><button type="button" id="botaoCarrinho"><i class="fa-solid fa-cart-shopping"></i> Carrinho</button></li>
+            <li class="carrinhoHeader" id="carrinhoHeader"><button type="button" id="botaoCarrinho"><i class="fa-solid fa-cart-shopping"></i> Carrinho</button></li>
         </ul>
     </header>
