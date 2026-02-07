@@ -54,11 +54,12 @@
         <p id="copyright">&copy; 2025 GameStore. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="../js/produtos.js" defer></script>
-    <script src="../js/main.js" defer></script>
-    <script src="../js/catalogo.js" defer></script>
-    <script src="../js/hardware.js" defer></script>
-    <script src="../js/produto.js" defer></script>
+    <script src="../assets/js/produtos.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/catalogo.js" defer></script>
+    <script src="../assets/js/hardware.js" defer></script>
+    <script src="../assets/js/produto.js" defer></script>
+    <script src="../assets/js/carrinho.js" defer></script>
 </body>
 
 </html>

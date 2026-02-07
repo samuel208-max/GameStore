@@ -152,7 +152,7 @@ header .divBarraDePesquisa button {
     display: flex;
     color: #00cc6e;
     align-items: center;
-    gap: 30px;
+    justify-content: space-between;
 }
 
 .fecharCarrinho {
@@ -162,6 +162,98 @@ header .divBarraDePesquisa button {
     width: 30px;
     cursor: pointer;
     font-size: 20px;
+}
+
+.listaCarrinho {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.carrinhoVazio {
+    color: #bc0d0d;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 200px;
+}
+
+.itemCarrinho {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #8336c7;
+}
+
+.imagem_carrinho {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.info_carrinho {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: bold;
+    flex: 1;
+}
+
+.nome_carrinho {
+    font-size: 16px;
+    margin: 0;
+    color: #00cc6e;
+}
+
+.preco_carrinho {
+    color: #00ff88;
+    font-size: 14px;
+}
+
+.quantidade_carrinho {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-left: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.quantidade_carrinho button {
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.quantidade_carrinho .diminuirQuantidade {
+    background-color: #ff4d4d;
+}
+
+.quantidade_carrinho .diminuirQuantidade:hover {
+    background-color: #cc0000;
+}
+
+.quantidade_carrinho .aumentarQuantidade {
+    background-color: #4CAF50;
+}
+
+.quantidade_carrinho .aumentarQuantidade:hover {
+    background-color: #45a049;
+}
+
+.quantidade_carrinho .quantidadeItemCarrinho {
+    font-size: 14px;
+    color: #00ff88;
+    font-weight: bold;
 }
 
 .resumoFinalCarrinho {
@@ -194,6 +286,37 @@ header .divBarraDePesquisa button {
     background-color: #7a1ed1;
 }
 
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(to right, #4a0f7d, #265428);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0.9;
+    z-index: 1001;
+    animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0.9;
+    }
+
+    40% {
+        opacity: 0.9;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
 
 main #banner {
     position: relative;

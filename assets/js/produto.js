@@ -52,10 +52,19 @@ function carregarProduto() {
     const comprar = document.getElementById('btnCarrinho');
 
     comprar.addEventListener('click', () => {
-        itensNoCarrinho.push({ ...produto });
+
+        const existingItem = itensNoCarrinho.find(item => item.id === produto.id && item.tipo === produto.tipo && item.nome === produto.nome);
+
+        if (existingItem) {
+            existingItem.quantidade += 1;
+            chamarToasts(`Quantidade de ${produto.nome} aumentada!`);
+        } else {
+            itensNoCarrinho.push({ ...produto, quantidade: 1 });
+            chamarToasts(`${produto.nome} adicionado ao carrinho!`);
+        }
+
         localStorage.setItem('itensCarrinho', JSON.stringify(itensNoCarrinho))
 
-        console.log(itensNoCarrinho);
         atualizarCarrinho();
     });
 }
