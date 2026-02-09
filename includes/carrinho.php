@@ -8,6 +8,6 @@
 
     <div class="resumoFinalCarrinho">
         <p>Total: R$ <span id="totalCarrinho">00,00</span></p>
-        <button class="btnFinalizarCompra" type="button">Finalizar Compra</button>
+        <button class="btnFinalizarCompra" type="button" id="btnFinalizarCompra">Finalizar Compra</button>
     </div>
 </aside>

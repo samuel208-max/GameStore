@@ -16,8 +16,8 @@ include '../includes/carrinho.php';
 
         <div id="bannerCentral">
             <div id="bannerTexto">
-                <h1>Os melhores jogos estão aqui</h1>
-                <p>Descubra uma experiência única de compra com milhares de <br> jogos, ofertas exclusivas e suporte
+                <h1 class="textoAnimado">Os melhores jogos estão aqui</h1>
+                <p class="textoAnimado">Descubra uma experiência única de compra com milhares de <br> jogos, ofertas exclusivas e suporte
                     24/7</p>
             </div>
 
@@ -28,18 +28,18 @@ include '../includes/carrinho.php';
 
             <div class="bannerEstastisticas">
                 <div>
-                    <h3>5.000+</h3>
-                    <p>Jogos Disponíveis</p>
+                    <h3 class="textoAnimado">5.000+</h3>
+                    <p class="textoAnimado">Jogos Disponíveis</p>
                 </div>
 
                 <div>
-                    <h3>100.000+</h3>
-                    <p>Clientes Satisfeitos</p>
+                    <h3 class="textoAnimado">100.000+</h3>
+                    <p class="textoAnimado">Clientes Satisfeitos</p>
                 </div>
 
                 <div>
-                    <h3>24/7</h3>
-                    <p>Suporte Online</p>
+                    <h3 class="textoAnimado">24/7</h3>
+                    <p class="textoAnimado">Suporte Online</p>
                 </div>
             </div>
         </div>

@@ -2,40 +2,54 @@
 const carrinho = document.getElementById('carrinho');
 const listaCarrinho = document.getElementById('listaCarrinho');
 const fecharCarrinho = document.getElementById('fecharCarrinho');
-const abrirCarrinho = document.getElementById('botaoCarrinho')
+const abrirCarrinho = document.getElementById('botaoCarrinho');
 const carrinhoHeader = document.getElementById('carrinhoHeader');
 const totalCarrinho = document.getElementById('totalCarrinho');
+const btnFinalizarCompra = document.getElementById('btnFinalizarCompra');
 
 // Abrir e fechar carrinho
 if (carrinho && abrirCarrinho && fecharCarrinho) {
     abrirCarrinho.addEventListener('click', () => {
-        carrinho.classList.add("ativo");
+        carrinho.classList.add('ativo');
     });
 
     fecharCarrinho.addEventListener('click', () => {
-        carrinho.classList.remove("ativo");
+        carrinho.classList.remove('ativo');
     });
 }
 
-// Lógica de renderizar carrinho
+// Estado do carrinho
 let itensNoCarrinho = JSON.parse(localStorage.getItem('itensCarrinho')) || [];
 
-// localStorage.clear();
+function verificarBtnCompra() {
+    if (itensNoCarrinho.length > 0) {
+        btnFinalizarCompra.style.opacity = '1';
+        btnFinalizarCompra.style.pointerEvents = 'auto';
+    } else {
+        btnFinalizarCompra.style.opacity = '0.5';
+        btnFinalizarCompra.style.pointerEvents = 'none';
+    }
+}
 
+// Renderização do carrinho
 function atualizarCarrinho() {
     listaCarrinho.innerHTML = '';
 
+    // Carrinho vazio
     if (itensNoCarrinho.length === 0) {
         const vazio = document.createElement('p');
-        vazio.className = 'carrinhoVazio'
+        vazio.className = 'carrinhoVazio';
         vazio.textContent = 'Carrinho vazio';
         listaCarrinho.appendChild(vazio);
+
+        totalCarrinho.textContent = '0.00';
+        verificarBtnCompra();
         calculaQuantidadeCarrinho();
         return;
     }
 
+    // Itens
     itensNoCarrinho.forEach((produto) => {
-
         const liCarrinho = document.createElement('li');
         liCarrinho.className = 'itemCarrinho';
 
@@ -44,8 +58,8 @@ function atualizarCarrinho() {
         img.src = produto.foto;
         img.alt = produto.altfoto;
 
-        const div = document.createElement('div');
-        div.className = 'info_carrinho';
+        const info = document.createElement('div');
+        info.className = 'info_carrinho';
 
         const nome = document.createElement('h4');
         nome.className = 'nome_carrinho';
@@ -55,22 +69,27 @@ function atualizarCarrinho() {
         preco.className = 'preco_carrinho';
         preco.textContent = `R$ ${(produto.preco * produto.quantidade).toFixed(2)}`;
 
+        info.append(nome, preco);
+
         const divQuantidade = document.createElement('div');
         divQuantidade.className = 'quantidade_carrinho';
 
-        const diminuirQuantidade = document.createElement('button');
-        diminuirQuantidade.className = 'diminuirQuantidade';
-        diminuirQuantidade.textContent = '-';
+        const diminuir = document.createElement('button');
+        diminuir.className = 'diminuirQuantidade';
+        diminuir.textContent = '-';
 
-        diminuirQuantidade.addEventListener('click', () => {
+        diminuir.addEventListener('click', () => {
             if (produto.quantidade > 1) {
-                produto.quantidade -= 1;
+                produto.quantidade--;
                 chamarToasts(`Quantidade de ${produto.nome} diminuída!`);
             } else {
-                itensNoCarrinho = itensNoCarrinho.filter(item => item.id !== produto.id || item.tipo !== produto.tipo || item.nome !== produto.nome);
+                itensNoCarrinho = itensNoCarrinho.filter(
+                    item => !(item.id === produto.id && item.tipo === produto.tipo)
+                );
                 chamarToasts(`${produto.nome} removido do carrinho!`);
             }
-            localStorage.setItem('itensCarrinho', JSON.stringify(itensNoCarrinho));
+
+            salvarCarrinho();
             atualizarCarrinho();
         });
 
@@ -78,42 +97,66 @@ function atualizarCarrinho() {
         quantidade.className = 'quantidadeItemCarrinho';
         quantidade.textContent = produto.quantidade;
 
-        const aumentarQuantidade = document.createElement('button');
-        aumentarQuantidade.className = 'aumentarQuantidade';
-        aumentarQuantidade.textContent = '+';
+        const aumentar = document.createElement('button');
+        aumentar.className = 'aumentarQuantidade';
+        aumentar.textContent = '+';
 
-        aumentarQuantidade.addEventListener('click', () => {
-            produto.quantidade += 1;
+        aumentar.addEventListener('click', () => {
+            produto.quantidade++;
             chamarToasts(`Quantidade de ${produto.nome} aumentada!`);
+            salvarCarrinho();
             atualizarCarrinho();
-            localStorage.setItem('itensCarrinho', JSON.stringify(itensNoCarrinho));
         });
 
-        divQuantidade.append(diminuirQuantidade, quantidade, aumentarQuantidade);
-        div.append(nome, preco);
-        liCarrinho.append(img, div, divQuantidade);
+        divQuantidade.append(diminuir, quantidade, aumentar);
+
+        liCarrinho.append(img, info, divQuantidade);
         listaCarrinho.appendChild(liCarrinho);
     });
 
-    const total = itensNoCarrinho.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
-    totalCarrinho.textContent = total.toFixed(2);
+    // Total
+    const total = itensNoCarrinho.reduce(
+        (acc, item) => acc + item.preco * item.quantidade,
+        0
+    );
 
+    totalCarrinho.textContent = total.toFixed(2);
     calculaQuantidadeCarrinho();
-    atualizarCarrinho();
+    verificarBtnCompra();
 }
 
-atualizarCarrinho();
+// Badge do carrinho
+function calculaQuantidadeCarrinho() {
+    const totalItens = itensNoCarrinho.reduce(
+        (acc, item) => acc + item.quantidade,
+        0
+    );
 
+    if (!carrinhoHeader) return;
+
+    const badgeExistente = carrinhoHeader.querySelector('.iconeCarrinho');
+
+    if (totalItens > 0) {
+        if (badgeExistente) {
+            badgeExistente.textContent = totalItens;
+        } else {
+            const badge = document.createElement('span');
+            badge.className = 'iconeCarrinho';
+            badge.textContent = totalItens;
+            carrinhoHeader.appendChild(badge);
+        }
+    } else {
+        if (badgeExistente) {
+            badgeExistente.remove();
+        }
+    }
+}
 
 function chamarToasts(message) {
     const toast = document.createElement('div');
     toast.className = 'toast';
+    toast.textContent = message;
 
-    const textoToast = document.createElement('span');
-    textoToast.className = 'textoToast';
-    textoToast.textContent = message;
-
-    toast.appendChild(textoToast);
     document.body.appendChild(toast);
 
     setTimeout(() => {
@@ -121,28 +164,12 @@ function chamarToasts(message) {
     }, 3000);
 }
 
-function calculaQuantidadeCarrinho() {
-    const totalItensCarrinho = itensNoCarrinho.reduce(
-        (acc, item) => acc + item.quantidade, 0);
-
-    if (!carrinhoHeader) return;
-
-    const iconeExistente = carrinhoHeader.querySelector('.iconeCarrinho');
-
-    if (totalItensCarrinho > 0) {
-        if (iconeExistente) {
-            iconeExistente.textContent = totalItensCarrinho;
-        } else {
-            const badge = document.createElement('span');
-            badge.className = 'iconeCarrinho';
-            badge.textContent = totalItensCarrinho;
-            carrinhoHeader.appendChild(badge);
-        }
-    } else {
-        if (iconeExistente) {
-            iconeExistente.remove();
-        }
-    }
+function salvarCarrinho() {
+    localStorage.setItem('itensCarrinho', JSON.stringify(itensNoCarrinho));
 }
 
-calculaQuantidadeCarrinho();
+atualizarCarrinho();
+
+
+
+// Animações de entrada e saida de carrinho

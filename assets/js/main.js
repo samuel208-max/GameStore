@@ -15,3 +15,13 @@ function trocarSlide() {
 if (slides.length > 0) {
     setInterval(trocarSlide, 3000);
 }
+
+let tituloAnimado = document.querySelector('#banner h1');
+let tituloAnimado2 = tituloAnimado.textContent;
+tituloAnimado.textContent = "";
+
+tituloAnimado2.split('').forEach((letra, index) => {
+    setTimeout(() => {
+        tituloAnimado.textContent += letra;
+    }, 100 * index);
+});
