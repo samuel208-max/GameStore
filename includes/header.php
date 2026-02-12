@@ -1,36 +1,43 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+require_once '../config/config.php';
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+?>
 
-    <title>GameStore</title>
-</head>
+<header>
+    <span>
+        <a href="<?= BASE_URL ?>/public/index.php" style="text-decoration: none; color: inherit;">
+            Game<b>Store</b>
+        </a>
+    </span>
 
-<body>
-    <header>
-        <span>Game<b>Store</b></span>
-        <nav class="navegacao">
-            <ul class="listaNavegacao">
-                <li><a href="../public/index.php">Home</a></li>
-                <li><a href="../public/catalogo.php">Catálogo</a></li>
-                <li><a href="../public/hardware.php">Hardware</a></li>
-                <li><a href="">Ofertas</a></li>
-            </ul>
-        </nav>
-
-        <div class="divBarraDePesquisa">
-            <input type="text" placeholder="Buscar jogos..." class="inputBarraDePesquisa">
-            <button type="button" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-
-        <ul class="iconesHeader">
-            <li><button type="button"><i class="fa-solid fa-user" id="botaoLogin"></i> Login</button></li>
-            <li class="carrinhoHeader" id="carrinhoHeader"><button type="button" id="botaoCarrinho"><i class="fa-solid fa-cart-shopping"></i> Carrinho</button></li>
+    <nav class="navegacao">
+        <ul class="listaNavegacao">
+            <li><a href="<?= BASE_URL ?>/public/index.php">Home</a></li>
+            <li><a href="<?= BASE_URL ?>/public/catalogo.php">Catálogo</a></li>
+            <li><a href="<?= BASE_URL ?>/public/hardware.php">Hardware</a></li>
+            <li><a href="#">Ofertas</a></li>
         </ul>
-    </header>
+    </nav>
+
+    <div class="divBarraDePesquisa">
+        <input type="text" placeholder="Buscar jogos..." class="inputBarraDePesquisa">
+        <button type="button" aria-label="Buscar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
+
+    <ul class="iconesHeader">
+        <li>
+            <button type="button">
+                <i class="fa-solid fa-user" id="botaoLogin"></i> Login
+            </button>
+        </li>
+
+        <li class="carrinhoHeader" id="carrinhoHeader">
+            <button type="button" id="botaoCarrinho">
+                <i class="fa-solid fa-cart-shopping"></i> Carrinho
+            </button>
+        </li>
+    </ul>
+</header>

@@ -1,83 +1,106 @@
-<?php 
+<?php require_once '../config/config.php'; ?>
 
-include '../includes/header.php'; 
-include '../includes/carrinho.php';
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?= CSS_URL ?>/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<main>
-    <section id="banner">
-        <div class="bannerSlides">
-            <div class="bannerSlide ativo"
-                style="background-image: url('https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png');">
-            </div>
-        </div>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
-        <div id="bannerCentral">
-            <div id="bannerTexto">
-                <h1>Nosso catálogo de jogos</h1>
-                <p>Explore nossa coleção completa de jogos para todas as plataformas</p>
-            </div>
-        </div>
-    </section>
+    <title>GameStore - Catálogo</title>
+</head>
 
-    <section class="section1" id="conhecaNossosJogos">
-        <div class="topoDaSection">
-            <h2>Conheça nossos jogos</h2>
-            <h3>Conheça nossa coleção completa</h3>
-        </div>
+<body>
 
-        <div class="conteudoCatalogo">
-            <aside class="filtros">
-                <h2>Filtros</h2>
+    <?php include INCLUDES_PATH . '/header.php'; ?>
 
-                <div class="campoFiltro">
-                    <h3>Categoria</h3>
+    <main>
 
-                    <div class="checkboxFiltro">
-                        <input type="checkbox" name="filtroAcao" id="filtroAcao">
-                        <label for="filtroAcao">Ação</label>
-                    </div>
+        <?php include INCLUDES_PATH . '/carrinho.php'; ?>
 
-                    <div class="checkboxFiltro">
-                        <input type="checkbox" name="filtroRPG" id="filtroRPG">
-                        <label for="filtroRPG">RPG</label>
-                    </div>
-
-                    <div class="checkboxFiltro">
-                        <input type="checkbox" name="filtroFPS" id="filtroFPS">
-                        <label for="filtroFPS">FPS</label>
-                    </div>
-
-                    <div class="checkboxFiltro">
-                        <input type="checkbox" name="filtroAventura" id="filtroAventura">
-                        <label for="filtroAventura">Aventura</label>
-                    </div>
+        <section id="banner">
+            <div class="bannerSlides">
+                <div class="bannerSlide ativo"
+                    style="background-image: url('https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png');">
                 </div>
+            </div>
 
-                <div class="campoFiltro">
-                    <h3>Plataforma</h3>
-
-                    <div class="checkboxFiltro">
-                        <input type="checkbox" name="filtroPC" id="filtroPC">
-                        <label for="filtroPC">PC</label>
-                    </div>
-
-                    <div class="checkboxFiltro">
-                        <input type="checkbox" name="filtroPlayStation" id="filtroPlayStation">
-                        <label for="filtroPlayStation">PlayStation</label>
-                    </div>
-
-                    <div class="checkboxFiltro">
-                        <input type="checkbox" name="filtroXbox" id="filtroXbox">
-                        <label for="filtroXbox">Xbox</label>
-                    </div>
+            <div id="bannerCentral">
+                <div id="bannerTexto">
+                    <h1>Nosso catálogo de jogos</h1>
+                    <p>Explore nossa coleção completa de jogos para todas as plataformas</p>
                 </div>
-            </aside>
+            </div>
+        </section>
 
-            <ul class="listaDeProdutos" id="listaDeJogos"></ul>
-        </div>
-    </section>
-</main>
+        <section class="section1" id="conhecaNossosJogos">
+            <div class="topoDaSection">
+                <h2>Conheça nossos jogos</h2>
+                <h3>Conheça nossa coleção completa</h3>
+            </div>
 
-<?php include '../includes/footer.php'; ?>
+            <div class="conteudoCatalogo">
+                <aside class="filtros">
+                    <h2>Filtros</h2>
+
+                    <div class="campoFiltro">
+                        <h3>Categoria</h3>
+
+                        <div class="checkboxFiltro">
+                            <input type="checkbox" name="filtroAcao" id="filtroAcao">
+                            <label for="filtroAcao">Ação</label>
+                        </div>
+
+                        <div class="checkboxFiltro">
+                            <input type="checkbox" name="filtroRPG" id="filtroRPG">
+                            <label for="filtroRPG">RPG</label>
+                        </div>
+
+                        <div class="checkboxFiltro">
+                            <input type="checkbox" name="filtroFPS" id="filtroFPS">
+                            <label for="filtroFPS">FPS</label>
+                        </div>
+
+                        <div class="checkboxFiltro">
+                            <input type="checkbox" name="filtroAventura" id="filtroAventura">
+                            <label for="filtroAventura">Aventura</label>
+                        </div>
+                    </div>
+
+                    <div class="campoFiltro">
+                        <h3>Plataforma</h3>
+
+                        <div class="checkboxFiltro">
+                            <input type="checkbox" name="filtroPC" id="filtroPC">
+                            <label for="filtroPC">PC</label>
+                        </div>
+
+                        <div class="checkboxFiltro">
+                            <input type="checkbox" name="filtroPlayStation" id="filtroPlayStation">
+                            <label for="filtroPlayStation">PlayStation</label>
+                        </div>
+
+                        <div class="checkboxFiltro">
+                            <input type="checkbox" name="filtroXbox" id="filtroXbox">
+                            <label for="filtroXbox">Xbox</label>
+                        </div>
+                    </div>
+                </aside>
+
+                <ul class="listaDeProdutos" id="listaDeJogos"></ul>
+            </div>
+        </section>
+    </main>
+
+    <?php include INCLUDES_PATH . '/footer.php'; ?>
+
+    <script src="<?= JS_URL ?>/produtos.js" defer></script>
+    <script src="<?= JS_URL ?>/catalogo.js" defer></script>
+    <script src="<?= JS_URL ?>/carrinho.js" defer></script>
+</body>
+
+</html>
