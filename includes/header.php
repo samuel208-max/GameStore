@@ -16,7 +16,7 @@ require_once '../config/config.php';
             <li><a href="<?= BASE_URL ?>/public/index.php">Home</a></li>
             <li><a href="<?= BASE_URL ?>/public/catalogo.php">Catálogo</a></li>
             <li><a href="<?= BASE_URL ?>/public/hardware.php">Hardware</a></li>
-            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Comunidade</a></li>
         </ul>
     </nav>
 

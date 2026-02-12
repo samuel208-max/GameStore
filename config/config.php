@@ -5,7 +5,8 @@ define('ROOT_PATH', dirname(__DIR__));
 define('INCLUDES_PATH', ROOT_PATH . '/includes');
 define('PUBLIC_PATH', ROOT_PATH . '/public');
 
-define('BASE_URL', 'http://localhost/desenvolvimento');
+define('BASE_URL', 'http://localhost/GameStore');
+
 
 // Assets
 define('ASSETS_URL', BASE_URL . '/assets');
