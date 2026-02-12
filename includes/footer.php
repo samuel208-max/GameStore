@@ -17,6 +17,8 @@ require_once '../config/config.php';
             </ul>
         </div>
 
+        <?php if(!isset($paginaCheckout)) : ?>
+
         <div class="blocoFooter">
             <h3>Links Rápidos</h3>
             <ul>
@@ -36,6 +38,8 @@ require_once '../config/config.php';
                 <li><a href="#">Trocas e Devoluções</a></li>
             </ul>
         </div>
+
+        <?php endif ?>
 
         <div class="blocoFooter" id="contatoFooter">
             <h3>Contato</h3>

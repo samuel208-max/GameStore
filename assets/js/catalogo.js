@@ -25,11 +25,7 @@ if (listaDeJogos) {
         const preco = document.createElement('p');
         preco.textContent = "R$" + jogo.preco.toFixed(2);
 
-        const comprar = document.createElement('button');
-        comprar.type = "button";
-        comprar.textContent = "Adicionar ao Carrinho";
-
-        article.append(div, nome, preco, comprar);
+        article.append(div, nome, preco);
         li.append(article);
         listaDeJogos.append(li);
     });

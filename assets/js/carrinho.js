@@ -115,10 +115,7 @@ function atualizarCarrinho() {
     });
 
     // Total
-    const total = itensNoCarrinho.reduce(
-        (acc, item) => acc + item.preco * item.quantidade,
-        0
-    );
+    const total = itensNoCarrinho.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
 
     totalCarrinho.textContent = total.toFixed(2);
     calculaQuantidadeCarrinho();

@@ -23,11 +23,7 @@ if (listaDeHardware) {
         const precoHardware = document.createElement('p');
         precoHardware.textContent = "R$" + produto.preco.toFixed(2);
 
-        const comprarHardware = document.createElement('button');
-        comprarHardware.type = "button";
-        comprarHardware.textContent = "Adicionar ao Carrinho";
-
-        articleHardware.append(divHardware, nomeHardware, precoHardware, comprarHardware);
+        articleHardware.append(divHardware, nomeHardware, precoHardware);
         liHardware.append(articleHardware);
         listaDeHardware.append(liHardware);
     });
