@@ -24,49 +24,57 @@ require_once '../config/config.php';
 
     <main class="mainAuth">
         <div class="containerAuth">
-            <div class="divAuth">
-                <h1>Login</h1>
-                <form action="" class="formAuth">
-                    <input type="email" name="emailLogin" class="inputAuth" id="emailLogin" placeholder="E-mail" required>
-                    <input type="password" name="senhaLogin" class="inputAuth" id="senhaLogin" placeholder="Senha" required>
-                    <a href="">Esqueceu a senha?</a>
-                    <button type="submit">Login</button>
-                </form>
+
+            <!-- AREA DOS FORMS -->
+            <div class="areaForm">
+
+                <!-- LOGIN -->
+                <div class="divAuth" id="formLogin">
+                    <h1>Login</h1>
+                    <form class="formAuth">
+                        <input type="email" placeholder="E-mail" required class="inputAuth">
+                        <input type="password" placeholder="Senha" required class="inputAuth">
+                        <a href="">Esqueceu sua senha?</a>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+
+                <!-- CADASTRO -->
+                <div class="divAuth" id="formCadastro">
+                    <h1>Cadastrar</h1>
+                    <form class="formAuth">
+                        <input type="text" placeholder="Nome Completo" required class="inputAuth">
+                        <input type="email" placeholder="E-mail" required class="inputAuth">
+                        <input type="password" placeholder="Senha" required class="inputAuth">
+                        <input type="password" placeholder="Confirmar Senha" required class="inputAuth">
+                        <div class="divTermos">
+                            <input type="checkbox" name="termos" id="termos" required>
+                            <label for="termos">Eu concordo com os <a href="">Termos de Uso</a> e a <a href="">Política de Privacidade</a></label>
+                        </div>
+                        <button type="submit">Cadastrar</button>
+                    </form>
+                </div>
+
             </div>
 
-            <div class="divAuth">
-                <h1>Cadastrar</h1>
-                <form action="" class="formAuth">
-                    <input type="text" name="nomeCadastrar" class="inputAuth" id="nomeCadastrar" placeholder="Nome Completo" required>
-                    <input type="email" name="emailCadastrar" class="inputAuth" id="emailCadastrar" placeholder="E-mail" required>
-                    <input type="password" name="senhaCadastrar" class="inputAuth" id="senhaCadastrar" placeholder="Senha" required>
-                    <input type="password" name="confirmarSenha" class="inputAuth" id="confirmarSenha" placeholder="Confirmar Senha" required>
-                    <div class="divTermos">
-                        <input type="checkbox" name="termos" id="termos">
-                        <label for="termos">Aceito os termos</label>
-                    </div>
-                    <button type="submit">Cadastrar</button>
-                </form>
+            <!-- PAINEL LATERAL -->
+            <div class="containerSobreposicao">
+                <div class="painel" id="painelDireita">
+                    <h2>Ainda não tem uma conta?</h2>
+                    <p>Crie sua conta e aproveite a melhor loja gamer</p>
+                    <button id="cadastrar">Cadastrar</button>
+                </div>
+
+                <div class="painel" id="painelEsquerda" style="display: none;">
+                    <h2>Já possui conta?</h2>
+                    <p>Faça login e continue sua jornada</p>
+                    <button id="entrar">Entrar</button>
+                </div>
             </div>
 
-            <!-- <div class="containerSobreposicao"> -->
-                <!-- <div class="sobreposicao"> -->
-                    <!-- div da esquerda -->
-                    <!-- <div class="painelSobreposicao painelEsquerda">
-                        <h1>Acesse sua conta</h1>
-                        <p>Faça login e gerencie sua pizzaria agora mesmo</p>
-                        <button class="ghost" id="entrar">Entrar</button>
-                    </div> -->
-                    <!-- div da direita -->
-                    <!-- <div class="painelSobreposicao painelDireita">
-                        <h1>Ainda não tem uma conta?</h1>
-                        <p>Crie sua conta e comece a gerenciar sua pizzaria agora mesmo</p>
-                        <button class="ghost" id="cadastrar">Cadastrar</button>
-                    </div> -->
-                <!-- </div> -->
-            <!-- </div>  -->
         </div>
     </main>
+
 
     <?php include INCLUDES_PATH . "/footer.php"; ?>
 

@@ -1,13 +1,17 @@
+const container = document.querySelector('.containerAuth');
+const painelDireita = document.getElementById('painelDireita');
+const painelEsquerda = document.getElementById('painelEsquerda');
 const botaoCadastrar = document.getElementById('cadastrar');
 const botaoEntrar = document.getElementById('entrar');
-const container = document.querySelector('.containerAuth');
 
 botaoCadastrar.addEventListener('click', () => {
-    container.classList.add('modoCadastro');
+    container.classList.add('cadastroAtivo');
+    painelDireita.style.display = 'none';
+    painelEsquerda.style.display = 'block';
 });
 
 botaoEntrar.addEventListener('click', () => {
-    container.classList.remove('modoCadastro');
+    container.classList.remove('cadastroAtivo');
+    painelDireita.style.display = 'block';
+    painelEsquerda.style.display = 'none';
 });
-
-console.log('Script de autenticação carregado com sucesso!');

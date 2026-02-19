@@ -23,10 +23,8 @@
         <?php include INCLUDES_PATH . '/carrinho.php'; ?>
 
         <section id="banner">
-            <div class="bannerSlides">
-                <div class="bannerSlide ativo"
-                    style="background-image: url('https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png');">
-                </div>
+            <div class="bannerFixo"
+                style="background-image: url('https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png');">
             </div>
 
             <div id="bannerCentral">
@@ -99,6 +97,7 @@
     <?php include INCLUDES_PATH . '/footer.php'; ?>
 
     <script src="<?= JS_URL ?>/main.js" defer></script>
+    <script src="<?= JS_URL ?>/animacoes.js" defer></script>
     <script src="<?= JS_URL ?>/produtos.js" defer></script>
     <script src="<?= JS_URL ?>/catalogo.js" defer></script>
     <script src="<?= JS_URL ?>/carrinho.js" defer></script>

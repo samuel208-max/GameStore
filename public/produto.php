@@ -25,6 +25,7 @@
 
     <?php include INCLUDES_PATH . '/footer.php'; ?>
 
+    <script src="<?= JS_URL ?>/main.js" defer></script>
     <script src="<?= JS_URL ?>/produtos.js" defer></script>
     <script src="<?= JS_URL ?>/produto.js" defer></script>
     <script src="<?= JS_URL ?>/carrinho.js" defer></script>
