@@ -2,9 +2,9 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: black;
     padding-top: 100px;
     font-family: 'Orbitron', sans-serif;
+    background-color: #000;
 }
 
 header {
@@ -133,7 +133,7 @@ header .divBarraDePesquisa button {
 }
 
 .carrinho {
-    background: linear-gradient(#4a0f7d,#321848, #094f2e 85%, #00cc6e);
+    background: linear-gradient(#4a0f7d, #321848, #094f2e 85%, #00cc6e);
     box-shadow: 10px 10px 15px #0e3f29;
     position: fixed;
     top: 20px;
@@ -142,13 +142,15 @@ header .divBarraDePesquisa button {
     padding: 0 20px;
     text-align: center;
     height: 90%;
-    display: none;
+    display: flex;
     flex-direction: column;
     border-radius: 10px;
+    transform: translateX(110%); /* começa totalmente fora da tela */
+    transition: transform 0.4s ease;
 }
 
 .carrinho.ativo {
-    display: flex;
+    transform: translateX(0); /* entra */
 }
 
 .topoCarrinho {
@@ -343,6 +345,237 @@ header .divBarraDePesquisa button {
     }
 }
 
+
+/* Página de checkout */
+.bodyCheckout {
+    padding-top: 75px;
+}
+
+.bodyCheckout header {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.mainCheckout {
+    padding: 50px 0;
+    background: linear-gradient(200deg, #094f2e, #321848);
+}
+
+.containerCheckout {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(17, 17, 17);
+    color: #fff;
+    border-radius: 10px;
+}
+
+.tituloCheckout {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: rgb(181, 158, 201);
+}
+
+.informacoesCheckout {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.itemCheckout {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #8336c7;
+}
+
+.imagemCheckout {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.infoCheckout {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: bold;
+}
+
+.nomeCheckout {
+    font-size: 18px;
+    margin: 0;
+    color: #00cc6e;
+}
+
+.precoCheckout {
+    color: #00ff88;
+    font-size: 16px;
+}
+
+.divQuantidadeCheckout {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-left: auto;
+    margin-top: 20px;
+    color: #00ff88;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.resumoFinalCheckout {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgb(45, 38, 53);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.resumoFinalCheckout p {
+    font-size: 24px;
+    color: #00cc6e;
+    font-weight: 700;
+}
+
+.btnPagar {
+    margin-top: 20px;
+    padding: 14px 28px;
+    font-size: 18px;
+    width: 95%;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background-color: #00ff88;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btnPagar:hover {
+    background-color: #00cc6e;
+    transform: scale(1.05);
+}
+
+.resumoFinalCheckout span {
+    color: #00ff88;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Página Auth */
+.bodyAuth {
+    padding-top: 75px;
+}
+
+.bodyAuth header {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.mainAuth {
+    padding: 100px 0;
+    background: linear-gradient(200deg, #094f2e, #321848);
+}
+
+.containerAuth {
+    display: flex;
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #111;
+}
+
+.divAuth {
+    width: 50%;
+    padding: 40px;
+}
+
+.divAuth h1 {
+    font-size: 36px;
+    text-align: center;
+    color: rgb(181, 158, 201);
+}
+
+.formAuth {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputAuth {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid rgb(90, 92, 95);
+    background-color: rgb(64, 62, 62);
+    color: aliceblue;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputAuth:focus {
+    outline: none;
+    transform: scale(1.02);
+    box-shadow: 0 0 10px #00ff88;
+}
+
+.formAuth a {
+    color: rgb(162, 144, 164);
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+}
+
+.formAuth a:hover {
+    text-decoration: underline;
+}
+
+.formAuth button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #00ff88;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.formAuth button:hover {
+    background-color: #04d875;
+    box-shadow: 0 0 10px #00cc6e;
+}
+
+.formAuth .divTermos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.divTermos input {
+    width: 20px;
+    height: 20px;
+    accent-color: #00ff88;
+    cursor: pointer;
+}
+
+.divTermos label {
+    color: aliceblue;
+    cursor: pointer;
+}
+
+/* Final Auth */
+
 main #banner {
     position: relative;
     height: 500px;
@@ -350,11 +583,12 @@ main #banner {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #000;
 }
 
-.bannerSlides {
-    position: absolute;
-    inset: 0;
+.bannerContainer {
+    position: relative;
+    overflow: hidden;
 }
 
 .bannerSlide {
@@ -362,21 +596,28 @@ main #banner {
     inset: 0;
     background-size: cover;
     background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: transform 1s ease;
 }
 
 .bannerSlide::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.8));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+}
+
+.bannerSlide {
+    transform: translateX(100%);
 }
 
 .bannerSlide.ativo {
-    opacity: 1;
+    transform: translateX(0);
+    z-index: 2;
+}
+
+.bannerSlide.saindo {
+    transform: translateX(-100%);
+    z-index: 1;
 }
 
 #bannerCentral {
@@ -525,7 +766,7 @@ main .section .fileira {
 .cardJogo {
     background-color: rgb(45, 38, 53);
     padding: 10px;
-    flex: 0 0 17%;
+    flex: 1;
     border-radius: 10px;
     color: rgb(204, 190, 214);
     letter-spacing: 1.2px;
@@ -915,4 +1156,27 @@ main #sectionInscricaoNewsletter .divInscricaoNewsletter .botaoInscricaoNewslett
     text-align: center;
     padding-top: 10px;
     color: rgb(175, 162, 187);
+}
+
+
+/* wenkit e essas coisas */
+html {
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: #3c2056;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: #00cc6e;
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background-color: #00ff88;
 }

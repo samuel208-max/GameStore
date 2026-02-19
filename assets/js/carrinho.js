@@ -31,6 +31,12 @@ function verificarBtnCompra() {
     }
 }
 
+btnFinalizarCompra.addEventListener('click', () => {
+    if (itensNoCarrinho.length > 0) {
+        window.location.href = 'checkout.php';
+    }
+});
+
 // Renderização do carrinho
 function atualizarCarrinho() {
     listaCarrinho.innerHTML = '';

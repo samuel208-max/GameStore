@@ -20,14 +20,19 @@ require_once '../config/config.php';
     <title>Checkout</title>
 </head>
 
-<body>
+<body class="bodyCheckout">
     <?php include INCLUDES_PATH . '/header.php'; ?>
 
-    <main>
-        <div class="informacoesCheckout" id="informacoesCheckout"></div>
-        <div class="resumoFinalCarrinho">
-            <p>Total: R$ <span id="totalCheckout">00,00</span></p>
-            <a href="<?= BASE_URL ?>/public/checkout.php"><button class="btnFinalizarCompra" type="button" id="btnFinalizarCompra">Pagar</button></a>
+    <main class="mainCheckout">
+        <div class="containerCheckout">
+            <h1 class="tituloCheckout">Checkout</h1>
+            <h2>Resumo do pedido</h2>
+            <ul class="informacoesCheckout" id="informacoesCheckout"></ul>
+
+            <div class="resumoFinalCheckout">
+                <p>Total: R$ <span id="totalCheckout">00,00</span></p>
+                <button type="button" class="btnPagar" id="btnPagar">Pagar</button>
+            </div>
         </div>
     </main>
 

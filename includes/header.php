@@ -11,7 +11,7 @@ require_once '../config/config.php';
         </a>
     </span>
 
-    <?php if (!isset($paginaCheckout)) : ?>
+    <?php if (!isset($paginaCheckout) && !isset($paginaAuth)) : ?>
 
         <nav class="navegacao">
             <ul class="listaNavegacao">
@@ -31,8 +31,8 @@ require_once '../config/config.php';
 
         <ul class="iconesHeader">
             <li>
-                <button type="button">
-                    <i class="fa-solid fa-user" id="botaoLogin"></i> Login
+                <button type="button" id="botaoLogin">
+                    <i class="fa-solid fa-user"></i> Login
                 </button>
             </li>
 
