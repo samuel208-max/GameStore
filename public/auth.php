@@ -32,10 +32,10 @@ require_once '../config/config.php';
                 <div class="divAuth" id="formLogin">
                     <h1>Login</h1>
                     <form class="formAuth">
-                        <input type="email" placeholder="E-mail" required class="inputAuth">
-                        <input type="password" placeholder="Senha" required class="inputAuth">
+                        <input type="email" class="inputAuth" id="inputEmailLogin" placeholder="E-mail" required>
+                        <input type="password" class="inputAuth" id="inputSenhaLogin" placeholder="Senha" required>
                         <a href="">Esqueceu sua senha?</a>
-                        <button type="submit">Login</button>
+                        <button type="submit" id="submitLogin">Login</button>
                     </form>
                 </div>
 
@@ -43,15 +43,15 @@ require_once '../config/config.php';
                 <div class="divAuth" id="formCadastro">
                     <h1>Cadastrar</h1>
                     <form class="formAuth">
-                        <input type="text" placeholder="Nome Completo" required class="inputAuth">
-                        <input type="email" placeholder="E-mail" required class="inputAuth">
-                        <input type="password" placeholder="Senha" required class="inputAuth">
-                        <input type="password" placeholder="Confirmar Senha" required class="inputAuth">
+                        <input type="text" class="inputAuth" id="inputNomeCadastrar" placeholder="Nome Completo" required>
+                        <input type="email" class="inputAuth" id="inputEmailCadastrar" placeholder="E-mail" required>
+                        <input type="password" class="inputAuth" id="inputSenhaCadastrar" placeholder="Senha" required>
+                        <input type="password" class="inputAuth" id="inputConfirmarSenhaCadastrar" placeholder="Confirmar Senha" required>
                         <div class="divTermos">
                             <input type="checkbox" name="termos" id="termos" required>
                             <label for="termos">Eu concordo com os <a href="">Termos de Uso</a> e a <a href="">Política de Privacidade</a></label>
                         </div>
-                        <button type="submit">Cadastrar</button>
+                        <button type="submit" id="submitCadastrar">Cadastrar</button>
                     </form>
                 </div>
 
