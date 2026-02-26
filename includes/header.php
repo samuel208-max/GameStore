@@ -2,6 +2,8 @@
 
 require_once '../config/config.php';
 
+
+
 ?>
 
 <header>
@@ -30,10 +32,17 @@ require_once '../config/config.php';
         </div>
 
         <ul class="iconesHeader">
-            <li>
+
+            <li id="liNomeUsuario" style="display: none;">
+                <button id="nomeUsuario"></button>
+            </li>
+
+            <li id="liLogin">
                 <button type="button" id="botaoLogin">
                     <i class="fa-solid fa-user"></i> Login
                 </button>
+
+                <button id="btnSair" style="display: none;">Sair</button>
             </li>
 
             <li class="carrinhoHeader" id="carrinhoHeader">

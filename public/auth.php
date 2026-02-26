@@ -31,7 +31,7 @@ require_once '../config/config.php';
                 <!-- LOGIN -->
                 <div class="divAuth" id="formLogin">
                     <h1>Login</h1>
-                    <form class="formAuth">
+                    <form class="formAuth" id="formLoginJS">
                         <input type="email" class="inputAuth" id="inputEmailLogin" placeholder="E-mail" required>
                         <input type="password" class="inputAuth" id="inputSenhaLogin" placeholder="Senha" required>
                         <a href="">Esqueceu sua senha?</a>

@@ -20,7 +20,6 @@ botaoEntrar.addEventListener('click', () => {
 // Lógica do cadastro
 const usuarios = JSON.parse(localStorage.getItem('cadastros')) || [];
 const submitCadastrar = document.getElementById('submitCadastrar');
-const submitLogin = document.getElementById('submitLogin');
 
 function cadastrar() {
     const nome = document.getElementById('inputNomeCadastrar').value.trim();
@@ -38,7 +37,7 @@ function cadastrar() {
         chamarToastCadastro(`Por favor, insira um e-mail válido!`);
         return;
     }
-    
+
     if (!validarSenha(senha)) {
         chamarToastCadastro(`A senha deve ter no mínimo 8 caracteres, uma letra maiúscula, um número e um caractere especial.`);
         return;
@@ -102,7 +101,63 @@ function chamarToastCadastro(message) {
 }
 // Fim da lógica de cadastro
 
+// Lógica de login
+const formLogin = document.getElementById('formLoginJS');
 
 function login() {
+    const usuarios = JSON.parse(localStorage.getItem('cadastros')) || [];
 
+    const emailLogin = document.getElementById('inputEmailLogin').value.trim().toLowerCase();
+    const senhaLogin = document.getElementById('inputSenhaLogin').value;
+
+    if (emailLogin === "" || senhaLogin === "") {
+        chamarToastCadastro(`Por favor, preencha os dois campos corretamente!`);
+        return;
+    }
+
+    if (!validarEmail(emailLogin)) {
+        chamarToastLogin(`Por favor, insira um e-mail válido!`);
+        return;
+    }
+
+    const usuarioEncontrado = usuarios.find(usuario => usuario.email === emailLogin);
+
+    if (!usuarioEncontrado) {
+        chamarToastLogin('Usuário não encontrado!');
+        return;
+    }
+
+    if (usuarioEncontrado.senha !== senhaLogin) {
+        chamarToastLogin('Senha incorreta!');
+        return;
+    }
+
+    const usuarioLogado = {
+        id: usuarioEncontrado.id,
+        nome: usuarioEncontrado.nome,
+        email: usuarioEncontrado.email
+    }
+
+    localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
+    chamarToastLogin('Login realizado com sucesso!');
+
+    window.location.href = 'index.php';
+
+}
+
+formLogin.addEventListener('submit', (e) => {
+    e.preventDefault();
+    login();
+});
+
+function chamarToastLogin(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toastLogin';
+    toast.textContent = message;
+
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.remove();
+    }, 3000);
 }
