@@ -42,7 +42,7 @@ require_once '../config/config.php';
                 <!-- CADASTRO -->
                 <div class="divAuth" id="formCadastro">
                     <h1>Cadastrar</h1>
-                    <form class="formAuth">
+                    <form class="formAuth" id="formCadastroJS">
                         <input type="text" class="inputAuth" id="inputNomeCadastrar" placeholder="Nome Completo" required>
                         <input type="email" class="inputAuth" id="inputEmailCadastrar" placeholder="E-mail" required>
                         <input type="password" class="inputAuth" id="inputSenhaCadastrar" placeholder="Senha" required>
