@@ -17,7 +17,7 @@ require_once '../config/config.php';
             </ul>
         </div>
 
-        <?php if(!isset($paginaCheckout) && !isset($paginaAuth)) : ?>
+        <?php if(!isset($paginaCheckout) && !isset($paginaAuth) && !isset($paginaMinhasCompras)) : ?>
 
         <div class="blocoFooter">
             <h3>Links Rápidos</h3>

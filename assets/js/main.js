@@ -15,20 +15,12 @@ function verificarSeEstaLogado() {
     if (usuarioLogado) {
         liNomeUsuario.style.display = 'flex'
         botaoLogin.style.display = 'none';
-        btnSair.style.display = 'flex';
         document.getElementById('nomeUsuario').textContent = usuarioLogado.nome;
     } // else {
     //     liNomeUsuario.style.display = 'none';
     //     liL.style.display = 'flex';
     //     btnSair.style.display = 'none';
     // }
-}
-
-if (btnSair) {
-    btnSair.addEventListener('click', () => {
-        localStorage.removeItem('usuarioLogado');
-        window.location.reload();
-    });
 }
 
 verificarSeEstaLogado();

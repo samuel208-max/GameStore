@@ -1,8 +1,10 @@
+// Animações
 const container = document.querySelector('.containerAuth');
 const painelDireita = document.getElementById('painelDireita');
 const painelEsquerda = document.getElementById('painelEsquerda');
 const botaoCadastrar = document.getElementById('cadastrar');
 const botaoEntrar = document.getElementById('entrar');
+
 
 botaoCadastrar.addEventListener('click', () => {
     container.classList.add('cadastroAtivo');
@@ -15,7 +17,7 @@ botaoEntrar.addEventListener('click', () => {
     painelDireita.style.display = 'block';
     painelEsquerda.style.display = 'none';
 });
-
+// Fim das animações
 
 // Lógica do cadastro
 const usuarios = JSON.parse(localStorage.getItem('cadastros')) || [];
@@ -58,11 +60,14 @@ function cadastrar() {
         return;
     }
 
+    const agora = new Date();
     const novoCadastro = {
         id: Date.now(),
         nome: nome,
         email: email,
-        senha: senha
+        senha: senha,
+        data: agora.toLocaleDateString('pt-BR'),
+        criadoem: agora.getTime()
     };
 
     usuarios.push(novoCadastro);
@@ -101,6 +106,7 @@ function chamarToastCadastro(message) {
 }
 // Fim da lógica de cadastro
 
+
 // Lógica de login
 const formLogin = document.getElementById('formLoginJS');
 
@@ -135,7 +141,8 @@ function login() {
     const usuarioLogado = {
         id: usuarioEncontrado.id,
         nome: usuarioEncontrado.nome,
-        email: usuarioEncontrado.email
+        email: usuarioEncontrado.email,
+        data: usuarioEncontrado.data
     }
 
     localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));

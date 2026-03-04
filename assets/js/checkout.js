@@ -1,6 +1,10 @@
 const informacoesCheckout = document.getElementById('informacoesCheckout');
 const totalCheckout = document.getElementById('totalCheckout');
 const btnPagar = document.getElementById('btnPagar');
+const total = itensNoCarrinho.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
+const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+// Array que vai conter os pedidos do usuario
+const pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
 
 if (itensNoCarrinho.length === 0) {
     window.location.href = 'index.php';
@@ -45,21 +49,52 @@ function carregarInformacoesCheckout() {
 }
 carregarInformacoesCheckout();
 
-function calcularTotalCheckout() {
-    const total = itensNoCarrinho.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
+function mostrarTotalCheckout() {
     totalCheckout.textContent = total.toFixed(2);
 }
-calcularTotalCheckout();
+mostrarTotalCheckout();
 
 function BotaoPagar() {
-    alert('Compra realizada com sucesso!');
+    btnPagar.disabled = true;
+
+    try {
+        criarNovoPedido();
+        alert('Compra realizada com sucesso!');
+    } catch (erro) {
+        btnPagar.disabled = false;
+        alert('Erro ao processar pedido');
+    }
+
 
     itensNoCarrinho = [];
     localStorage.setItem('itensCarrinho', JSON.stringify(itensNoCarrinho));
 
-    window.location.href = 'index.php';
+    window.location.href = 'confirmacaoCompra.php';
+}
+
+function criarNovoPedido() {
+    const agoraPedido = new Date();
+    const novoPedido = {
+        id: Date.now(),
+        idUsuario: usuarioLogado.id,
+        nome: usuarioLogado.nome,
+        itens: [...itensNoCarrinho],
+        total: total,
+        status: "Confirmado",
+        data: agoraPedido.toLocaleDateString('pt-BR'),
+        criadoEm: agoraPedido.getTime()
+    }
+
+    pedidos.push(novoPedido);
+    localStorage.setItem('pedidos', JSON.stringify(pedidos));
+    localStorage.setItem('ultimoPedidoID', JSON.stringify(novoPedido.id));
 }
 
 btnPagar.addEventListener('click', () => {
+    if (!usuarioLogado) {
+        alert("Faça login para finalizar a compra");
+        return;
+    }
+
     BotaoPagar();
 });

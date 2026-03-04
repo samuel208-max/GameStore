@@ -35,7 +35,7 @@ require_once '../config/config.php';
             </div>
         </div>
     </main>
-
+    <script src="<?= JS_URL ?>/auth.js" defer></script>
     <script src="<?= JS_URL ?>/carrinho.js" defer></script>
     <script src="<?= JS_URL ?>/checkout.js" defer></script>
 

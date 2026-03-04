@@ -1,0 +1,121 @@
+.meuPerfil {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 350px;
+    height: 100%;
+    background: #111827;
+    padding: 0 10px;
+    box-shadow: -5px 0 25px rgba(0, 255, 204, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1000;
+    transform: translateX(110%);
+    /* começa totalmente fora da tela */
+    transition: transform 0.4s ease;
+}
+
+.meuPerfil.ativo {
+    transform: translateX(0);
+}
+
+.topoMeuPerfil {
+    display: flex;
+    align-items: center;
+}
+
+.topoMeuPerfil h2 {
+    font-size: 20px;
+    color: #00ffcc;
+}
+
+.fecharMeuPerfil {
+    border: none;
+    margin-left: auto;
+    margin-right: 10px;
+    background-color: transparent;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.dadosUsuarios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+}
+
+.dadosUsuarios p {
+    color: #ffffff;
+}
+
+.nomeDoUsuario {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00cc6e !important;
+}
+
+.emailDoUsuario {
+    font-size: 14px;
+    color: #00ff88 !important;
+}
+
+.dataCadastroDoUsuario,
+.quantidadeComprasFeitas {
+    font-weight: bold;
+    color: #00ffcc;
+}
+
+.botoesNavegacao {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.botoesNavegacao li {
+    margin-bottom: 12px;
+}
+
+.buttonNavMeuPerfil {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    background: #0f172a;
+    border: 1px solid #1f2937;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.buttonNavMeuPerfil:hover {
+    background: #00ffcc;
+    color: #000;
+}
+
+#buttonSairPerfil {
+    margin-top: auto;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    padding: 5px 0;
+    border: none;
+    background: rgb(161, 5, 5);
+    color: aliceblue;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+#buttonSairPerfil:hover {
+    background-color: rgb(128, 3, 3);
+}
+
+#buttonSairPerfil i {
+    margin-right: 6px;
+}
