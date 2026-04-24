@@ -55,7 +55,7 @@ O projeto tem como objetivo consolidar conhecimentos em desenvolvimento full-sta
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/SEU_USERNAME/gamestore.git
+git clone https://github.com/samuel208-max/gamestore.git
 ```
 
 2. Execute em um servidor local (XAMPP, WAMP, Laragon, etc.)
@@ -63,7 +63,7 @@ git clone https://github.com/SEU_USERNAME/gamestore.git
 3. Acesse no navegador:
 
 ```
-http://localhost/gamestore
+http://localhost/gamestore/
 ```
 
 ---
