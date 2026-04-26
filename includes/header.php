@@ -23,11 +23,13 @@ require_once '../config/config.php';
         </nav>
 
         <div class="divBarraDePesquisa">
-            <input type="text" placeholder="Buscar jogos..." class="inputBarraDePesquisa">
+            <input type="text" placeholder="Buscar jogos..." class="inputBarraDePesquisa" id="inputBarraDePesquisa">
             <button type="button" aria-label="Buscar">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
         </div>
+
+        <div id="resultadosPesquisa" class="resultadosPesquisa"></div>
 
         <ul class="iconesHeader">
 

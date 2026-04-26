@@ -72,6 +72,7 @@ header span b {
 
 header .divBarraDePesquisa {
     margin-right: -100px;
+    position: relative;
 }
 
 header .divBarraDePesquisa .inputBarraDePesquisa,
@@ -97,6 +98,96 @@ header .divBarraDePesquisa button {
     background-color: blueviolet;
     color: white;
     cursor: pointer;
+}
+
+/* Dropdown de pesquisa */
+.resultadosPesquisa {
+    position: absolute;
+    display: none;
+    top: 100%;
+    right: 250px;
+    width: 30%;
+    background: linear-gradient(to top, rgb(32, 31, 31), rgb(34, 13, 40), rgb(11, 6, 12));
+    border: 1px solid #00cc6e;
+    border-radius: 8px;
+    z-index: 1000;
+    max-height: 400px;
+    overflow-y: auto;
+    animation: dropdownEntrar 0.2s ease forwards;
+}
+
+@keyframes dropdownEntrar {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.resultadosPesquisa::-webkit-scrollbar {
+    width: 10px;
+}
+
+.resultadosPesquisa::-webkit-scrollbar-track {
+    background-color: #3c2056;
+}
+
+.resultadosPesquisa::-webkit-scrollbar-thumb {
+    background-color: #00cc6e;
+    border-radius: 10px;
+}
+
+.resultadosPesquisa::-webkit-scrollbar-thumb:hover {
+    background-color: #00ff88;
+}
+
+.resultadosPesquisa ul {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+}
+
+.itemResultadoPesquisa a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.itemResultadoPesquisa a:hover {
+    background-color: #7b2fff25;
+}
+
+.imagemResultadoPesquisa {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #7b2fff;
+}
+
+.nomeResultadoPesquisa {
+    color: #00cc6e;
+    margin-left: 0px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.itemResultadoPesquisa:not(:last-child) a {
+    border-bottom: 1px solid #ffffff10;
+}
+
+/* Nenhum resultado */
+.resultadosPesquisa p {
+    color: #aaaaaa;
+    font-size: 0.85rem;
+    padding: 16px;
+    text-align: center;
 }
 
 .iconesHeader {

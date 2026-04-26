@@ -63,7 +63,7 @@ function carregarProduto() {
             chamarToasts(`${produto.nome} adicionado ao carrinho!`);
         }
 
-        localStorage.setItem('itensCarrinho', JSON.stringify(itensNoCarrinho))
+        salvarCarrinho();
 
         atualizarCarrinho();
     });

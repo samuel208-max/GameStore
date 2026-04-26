@@ -76,3 +76,5 @@ require_once '../config/config.php';
         &copy; <?= date('Y'); ?> GameStore. Todos os direitos reservados.
     </p>
 </footer>
+
+<script src="<?= JS_URL ?>/campoDeBusca.js" defer></script>

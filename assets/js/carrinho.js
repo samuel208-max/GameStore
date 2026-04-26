@@ -1,3 +1,7 @@
+const usuarioAtual = JSON.parse(localStorage.getItem('usuarioLogado'));
+const chaveCarrinho = usuarioAtual ? `carrinho_${usuarioAtual.id}` : 'carrinho_guest';
+
+
 // Carrinho
 const carrinho = document.getElementById('carrinho');
 const listaCarrinho = document.getElementById('listaCarrinho');
@@ -19,7 +23,7 @@ if (carrinho && abrirCarrinho && fecharCarrinho) {
 }
 
 // Estado do carrinho
-let itensNoCarrinho = JSON.parse(localStorage.getItem('itensCarrinho')) || [];
+let itensNoCarrinho = JSON.parse(localStorage.getItem(chaveCarrinho)) || [];
 
 function verificarBtnCompra() {
     if (itensNoCarrinho.length > 0) {
@@ -168,7 +172,7 @@ function chamarToasts(message) {
 }
 
 function salvarCarrinho() {
-    localStorage.setItem('itensCarrinho', JSON.stringify(itensNoCarrinho));
+    localStorage.setItem(chaveCarrinho, JSON.stringify(itensNoCarrinho));
 }
 
 atualizarCarrinho();

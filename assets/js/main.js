@@ -15,12 +15,8 @@ function verificarSeEstaLogado() {
     if (usuarioLogado) {
         liNomeUsuario.style.display = 'flex'
         botaoLogin.style.display = 'none';
-        document.getElementById('nomeUsuario').textContent = usuarioLogado.nome;
-    } // else {
-    //     liNomeUsuario.style.display = 'none';
-    //     liL.style.display = 'flex';
-    //     btnSair.style.display = 'none';
-    // }
+        document.getElementById('nomeUsuario').textContent = usuarioLogado.nome.split(' ')[0];
+    } 
 }
 
 verificarSeEstaLogado();
